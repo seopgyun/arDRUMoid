@@ -1,9 +1,5 @@
-int BTNLEDPIN = 8;
+  const int BTNLEDPIN = 8;
 
-void setup() {
-  Serial.begin(115200);
-  pinMode(BTNLEDPIN, OUTPUT);
-}
   int val0_old , val1_old, val2_old, val3_old, val4_old;
   int val0;   //Symbal
   int val1;   //Hihat
@@ -11,9 +7,12 @@ void setup() {
   int val3;  //Tom
   int val4;  //Kick
 
+void setup() {
+  Serial.begin(115200);
+  pinMode(BTNLEDPIN, OUTPUT);
+}
 
 void loop() {
-
   val0 = analogRead(0); //Connect the sensor to analog pin 0
   val1 = analogRead(1);
   val2 = analogRead(2); 
