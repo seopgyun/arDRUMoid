@@ -1,11 +1,15 @@
 package com.ardrumoid.data;
 
+
 import android.os.Parcel;
 import android.os.Parcelable;
 
+/**
+ * Created by Jinseop on 2015-11-15.
+ */
 public class SelectMusicData implements Parcelable {
 
-    public String url, title;
+    public String bgUrl, dataUrl, imgUrl, title;
 
     @Override
     public int describeContents() {
@@ -14,7 +18,9 @@ public class SelectMusicData implements Parcelable {
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
-        dest.writeString(url);
+    	dest.writeString(bgUrl);
+    	dest.writeString(dataUrl);
+        dest.writeString(imgUrl);
         dest.writeString(title);
     }
 
@@ -32,7 +38,9 @@ public class SelectMusicData implements Parcelable {
     }
 
     private SelectMusicData(Parcel in) {
-        url = in.readString();
+    	bgUrl = in.readString();
+    	dataUrl = in.readString();
+    	imgUrl = in.readString();
         title = in.readString();
     }
 }
